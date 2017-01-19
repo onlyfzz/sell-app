@@ -19,9 +19,13 @@ Vue.use(VueResource);
 // 通过 Vue.extend() 创建的组件构造器，
 // 或者，只是一个组件配置对象。
 const routes = [
-	{ path: '/goods', component: goods },
-	{ path: '/ratings', component: ratings },
-	{ path: '/seller', component: seller }
+	{path: '/', name: 'index', component: App,
+		children: [
+		 	{path: 'goods', component: goods},
+		 	{path: 'ratings', component: ratings},
+		 	{path: 'seller', component: seller}
+		]
+	}
 ];
 
 // 创建 router 实例，然后传 `routes` 配置
@@ -32,9 +36,7 @@ const router = new VueRouter({
 });
 
 // 创建和挂载根实例
-// 这里的render: h => h(App)是es6的写法   
-// 转换过来就是：暂且可理解为是渲染App组件
 const app = new Vue({
-	router,
-	render: h => h(App)
+	router
 }).$mount('#app');
+
