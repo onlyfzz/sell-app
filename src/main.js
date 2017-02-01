@@ -19,13 +19,10 @@ Vue.use(VueResource);
 // 通过 Vue.extend() 创建的组件构造器，
 // 或者，只是一个组件配置对象。
 const routes = [
-	{path: '/', name: 'index', component: App,
-		children: [
-		 	{path: 'goods', component: goods},
-		 	{path: 'ratings', component: ratings},
-		 	{path: 'seller', component: seller}
-		]
-	}
+ 	{path: 'goods', component: goods},
+ 	{path: 'ratings', component: ratings},
+ 	{path: 'seller', component: seller}
+
 ];
 
 // 创建 router 实例，然后传 `routes` 配置
