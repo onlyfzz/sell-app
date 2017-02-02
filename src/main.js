@@ -34,6 +34,8 @@ const router = new VueRouter({
 
 // 创建和挂载根实例
 const app = new Vue({
-	router
+	router,
+    render: h => h(App)
 }).$mount('#app');
+
 
